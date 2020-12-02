@@ -9,13 +9,9 @@ Numerical solver : Finite Volume Method (FVM)
 ### Install Docker on Mac
 [Docker Desktop for mac user manual](https://docs.docker.com/docker-for-mac/) navigates how to install
 Download [Docker Desktop for mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)
-<div>
-[\\\01_docker_desktop_mac]
-</div>
-
 then install `Docker.dmg`
 <div>
-[\\\02_docker_drag_to_application]
+<img width="722" alt="02_docker_drag_to_application" src="https://user-images.githubusercontent.com/40614421/100893073-410f9100-34bb-11eb-8f12-98fcba6c9da2.png">
 </div>
 
 ### Install and run OpenFOAM
@@ -38,7 +34,7 @@ install OpenFOAM and start working on the container
 (base) ist-xxx-xx: ~ $ ./startMacOpenFOAM
 ```
 <div>
-[\\\03]
+<img width="626" alt="03_docker_openform" src="https://user-images.githubusercontent.com/40614421/100892831-073e8a80-34bb-11eb-963d-fec7b555a034.png">
 </div>
 
 ```
@@ -56,7 +52,7 @@ install OpenFOAM and start working on the container
 * you are all set!
 
 <div>
-[\\\04_start]
+<img width="565" alt="04_start_openFOAM" src="https://user-images.githubusercontent.com/40614421/100892548-bc247780-34ba-11eb-9e2d-c06042b506a1.png">
 </div>
 
 ```
@@ -117,9 +113,10 @@ Download [tutorail](https://www.openfoam.com/documentation/tutorial-guide/introd
 ### Incompressible Flow 
 In an incompressible fluid, particles have constant density (`ρ = const`), and so in the particle frame of reference, the Lagrangian observer does not see any density variation and [`Dρ/Dt = 0`](https://en.wikipedia.org/wiki/Incompressible_flow).  
 
-![\Large](https://latex.codecogs.com/svg.latex?\Large&space;\frac{\partial\rho}{\partial\t}=0)
+<img src="http://latex.codecogs.com/svg.latex?\frac{\partial\rho}{\partial&space;t}=0&space;" title="http://latex.codecogs.com/svg.latex?\frac{\partial\rho}{\partial t}=0 " />
 
-Continuity equation 
+Continuity equation
+
 ![\Large](https://latex.codecogs.com/svg.latex?\Large&space;\frac{D\rho}{D\t}=\frac{\partial\rho}{\partial\t}+u\cdot\nabla\rho=0) 
 
 #### Lid-driven cavity flow
@@ -147,7 +144,7 @@ open terminal and run `blockMesh`
 PDRblockMeshDict  blockMeshDict  controlDict  fvSchemes  fvSolution
 ```
 <div>
-[\\\05_blockMesh]
+<img width="972" alt="05_blockMesh" src="https://user-images.githubusercontent.com/40614421/100892091-3e606c00-34ba-11eb-9ecb-7e1637ba235e.png">
 </div>
 
 [`blockMesh`](https://www.openfoam.com/documentation/guides/latest/doc/guide-meshing-blockmesh.html) is a structured hexahedral mesh generator.
@@ -311,7 +308,9 @@ other physical properties are stored
 nu              0.01; # kinematic viscosity
 ```
 [Reynolds number](https://en.wikipedia.org/wiki/Reynolds_number) is defined by 
+
 ![\Large](https://latex.codecogs.com/svg.latex?\Large&space;Re=\frac{\rho\cdotU\cdotd}{\mu}=\frac{U\cdotd}{\nu})
+
 where 𝝆: density, U: velocity, d: characteristic length, 𝝁: dynamic viscosity, and 𝝂: kinematic viscosity
 Here, Re = 10, d = 0.1, U = 1 so 𝝂 = 0.01
 
@@ -362,7 +361,9 @@ how to define a time step?
 >[convergence condition by Courant–Friedrichs–Lewy (CFL) is a necessary condition for convergence while solving certain partial differential equations (usually hyperbolic PDEs) numerically.](https://en.wikipedia.org/wiki/Courant%E2%80%93Friedrichs%E2%80%93Lewy_condition)
 So, time step and grid size should be considered carefllly based on the CFL conditions.
 For one-dimensional case, the CFL has the following form:
+
 ![\Large](https://latex.codecogs.com/svg.latex?\Large&space;C=\frac{U\cdotdt}{\dx}\leq1)
+
 where C: Courant number, U: velocity, dt: time step, du: length interval 
 Here, U = 1, dx = d/Nx = 0.1/20 = 0.005 and dt = 0.005 
 
@@ -465,5 +466,4 @@ PISO
 
 Enjoy :)
 
-ref : 
-* for FVM, definitely, [Peric's Thesis (1985)](https://www.researchgate.net/publication/35233550_A_finite_volume_method_for_the_three-dimensional_fluid_flow_in_complex_ducts)
+ref : for FVM, definitely, [Peric's Thesis (1985)](https://www.researchgate.net/publication/35233550_A_finite_volume_method_for_the_three-dimensional_fluid_flow_in_complex_ducts)
