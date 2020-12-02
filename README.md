@@ -34,7 +34,7 @@ install OpenFOAM and start working on the container
 (base) ist-xxx-xx: ~ $ ./startMacOpenFOAM
 ```
 <div>
-<img width="626" alt="03_docker_openform" src="https://user-images.githubusercontent.com/40614421/100892831-073e8a80-34bb-11eb-963d-fec7b555a034.png">
+<img width="626" alt="03_docker_openform" src="https://user-images.githubusercontent.com/40614421/100897356-e62c6880-34bf-11eb-8ed5-fcde36115f23.png">
 </div>
 
 ```
@@ -52,7 +52,7 @@ install OpenFOAM and start working on the container
 * you are all set!
 
 <div>
-<img width="565" alt="04_start_openFOAM" src="https://user-images.githubusercontent.com/40614421/100892548-bc247780-34ba-11eb-9e2d-c06042b506a1.png">
+<img width="565" alt="04_start_openFOAM" src="https://user-images.githubusercontent.com/40614421/100897944-884c5080-34c0-11eb-8215-0e5d59b446e0.png">
 </div>
 
 ```
@@ -113,11 +113,7 @@ Download [tutorail](https://www.openfoam.com/documentation/tutorial-guide/introd
 ### Incompressible Flow 
 In an incompressible fluid, particles have constant density (`ρ = const`), and so in the particle frame of reference, the Lagrangian observer does not see any density variation and [`Dρ/Dt = 0`](https://en.wikipedia.org/wiki/Incompressible_flow).  
 
-<img src="http://latex.codecogs.com/svg.latex?\frac{\partial\rho}{\partial&space;t}=0&space;" title="http://latex.codecogs.com/svg.latex?\frac{\partial\rho}{\partial t}=0 " />
-
-Continuity equation
-
-![\Large](https://latex.codecogs.com/svg.latex?\Large&space;\frac{D\rho}{D\t}=\frac{\partial\rho}{\partial\t}+u\cdot\nabla\rho=0) 
+<img src="http://latex.codecogs.com/svg.latex?\frac{\partial\rho}{\partial&space;t}=0&space;" title="http://latex.codecogs.com/svg.latex?\frac{\partial\rho}{\partial t}=0 " /> 
 
 #### Lid-driven cavity flow
 2D  laminar, isothermal, incompressible flow 
@@ -144,7 +140,7 @@ open terminal and run `blockMesh`
 PDRblockMeshDict  blockMeshDict  controlDict  fvSchemes  fvSolution
 ```
 <div>
-<img width="972" alt="05_blockMesh" src="https://user-images.githubusercontent.com/40614421/100892091-3e606c00-34ba-11eb-9ecb-7e1637ba235e.png">
+<img width="972" alt="05_blockMesh" src="https://user-images.githubusercontent.com/40614421/100899092-c1d18b80-34c1-11eb-8ea6-34bd1f84b947.png">
 </div>
 
 [`blockMesh`](https://www.openfoam.com/documentation/guides/latest/doc/guide-meshing-blockmesh.html) is a structured hexahedral mesh generator.
@@ -307,9 +303,10 @@ other physical properties are stored
 ```
 nu              0.01; # kinematic viscosity
 ```
-[Reynolds number](https://en.wikipedia.org/wiki/Reynolds_number) is defined by 
 
-![\Large](https://latex.codecogs.com/svg.latex?\Large&space;Re=\frac{\rho\cdotU\cdotd}{\mu}=\frac{U\cdotd}{\nu})
+[Reynolds number](https://en.wikipedia.org/wiki/Reynolds_number) is defined by,
+
+<img src="http://latex.codecogs.com/svg.latex?Re=\frac{\rho\cdot&space;U&space;\cdot&space;d}{\mu}=\frac{U\cdot&space;d}{\nu}" title="http://latex.codecogs.com/svg.latex?Re=\frac{\rho\cdot U \cdot d}{\mu}=\frac{U\cdot d}{\nu}" />
 
 where 𝝆: density, U: velocity, d: characteristic length, 𝝁: dynamic viscosity, and 𝝂: kinematic viscosity
 Here, Re = 10, d = 0.1, U = 1 so 𝝂 = 0.01
@@ -362,7 +359,7 @@ how to define a time step?
 So, time step and grid size should be considered carefllly based on the CFL conditions.
 For one-dimensional case, the CFL has the following form:
 
-![\Large](https://latex.codecogs.com/svg.latex?\Large&space;C=\frac{U\cdotdt}{\dx}\leq1)
+<img src="http://latex.codecogs.com/svg.latex?C=\frac{U&space;dt}{dx}\leqslant&space;1" title="http://latex.codecogs.com/svg.latex?C=\frac{U dt}{dx}\leqslant 1" />
 
 where C: Courant number, U: velocity, dt: time step, du: length interval 
 Here, U = 1, dx = d/Nx = 0.1/20 = 0.005 and dt = 0.005 
@@ -377,8 +374,6 @@ PDRblockMeshDict  blockMeshDict  controlDict  fvSchemes  fvSolution
 [ofuser@xxxxxxxxxxxx system]$ more fvSchemes
 ```
 specify the choice of finite volume discretisation schemes (treatment of each term in the system of equations) in the `fvSchemes` dictionary
-
-
 
 ```
 ddtSchemes
@@ -466,4 +461,6 @@ PISO
 
 Enjoy :)
 
-ref : for FVM, definitely, [Peric's Thesis (1985)](https://www.researchgate.net/publication/35233550_A_finite_volume_method_for_the_three-dimensional_fluid_flow_in_complex_ducts)
+ref : 
+* for FVM, definitely, [Peric's Thesis (1985)](https://www.researchgate.net/publication/35233550_A_finite_volume_method_for_the_three-dimensional_fluid_flow_in_complex_ducts)
+* for generating [Eq](https://editor.codecogs.com/)
