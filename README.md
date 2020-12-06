@@ -1,4 +1,4 @@
-:black_heart: OpenFOAM on mac
+## :black_heart: OpenFOAM on mac
 
 > OpenCFD Ltd. uses Docker Hub to distribute pre-compiled versions of OpenFOAM for Linux, Mac OS X and Windows, including a complete development environment. [OpenFOAM](https://openfoam.com/download/install-binary-mac.php)
 
@@ -6,7 +6,7 @@ Prerequisites : Docker (for mac), OpenFOAM
 Motivation : solve for fun 
 Numerical solver : Finite Volume Method (FVM)
 
-### Install Docker on Mac
+### ☺︎ Install Docker on Mac
 [Docker Desktop for mac user manual](https://docs.docker.com/docker-for-mac/) navigates how to install
 Download [Docker Desktop for mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac/)
 then install `Docker.dmg`
@@ -14,7 +14,7 @@ then install `Docker.dmg`
 <img width="722" alt="02_docker_drag_to_application" src="https://user-images.githubusercontent.com/40614421/100893073-410f9100-34bb-11eb-8f12-98fcba6c9da2.png">
 </div>
 
-### Install and run OpenFOAM
+### ☺︎ Install and run OpenFOAM
 turn on docker
 open a terminal
 [release of OpenFOAM® v2006 (20 06)](https://hub.docker.com/r/openfoamplus/of_v2006_centos73)
@@ -22,7 +22,7 @@ open a terminal
 ```
 (base) ist-xxx-xx: ~ $ docker pull openfoamplus/of_v2006_centos73
 ```
-#### download `installMacOpenFOAM` and `startMacOpenFOAM`
+#### ☺︎ Download `installMacOpenFOAM` and `startMacOpenFOAM`
 first, make the scripts executable
 ```
 (base) ist-xxx-xx: ~ $ chmod +x installMacOpenFOAM
@@ -44,7 +44,7 @@ install OpenFOAM and start working on the container
 (base) ist-xxx-xx: ~ $ blockMesh
 (base) ist-xxx-xx: ~ $ icoFoam
 ```
-#### start OpenFOAM on terminal
+#### ☺︎ Start OpenFOAM on terminal
 * start docker
 * open terminal
 * go to the directory where `startMacOpenFOAM` locates
@@ -59,23 +59,9 @@ install OpenFOAM and start working on the container
 (base) ist-xxx-xx: ~ $ ./startMacOpenFOAM
 ```
 
-### OpenFOAM tutorial
+### ☺︎ OpenFOAM tutorial
 [tutorial](https://www.openfoam.com/documentation/tutorial-guide/)
 
-### terminate OpenFOAM
-```
-[ofuser@xxxxxxxxxxxx workingDir]$ exit
-```
-### Post-processing 
-paraview (opensource)
-[download paraview](https://www.paraview.org/download/)
-open with `paraFoam` later
-
-### Terminate OpenFOAM
-to end OpenFOAM, 
-```
-[ofuser@xxxxxxxxxxxx workingDir]$ exit
-```
 ```
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
@@ -93,7 +79,7 @@ FoamFile
 }
 ```
 
-### Tutorial
+### ☺︎ Tutorial
 Download [tutorail](https://www.openfoam.com/documentation/tutorial-guide/introduction.php)
 > Copies of all tutorials are available from the tutorials directory of the OpenFOAM installation. The tutorials are organised into a set of directories according to the type of flow and then subdirectories according to solver.
 
@@ -102,7 +88,7 @@ Download [tutorail](https://www.openfoam.com/documentation/tutorial-guide/introd
 [ofuser@xxxxxxxxxxxx workingDir]$ cp -r $FOAM_TUTORIALS $FOAM_RUN
 ```
 
-### Curriculum
+### ☺︎ Curriculum
 - [x] 01. [Incompressible Flow](https://www.openfoam.com/documentation/tutorial-guide/incompressible.php)
 - [ ] 02. [Compressible Flow](https://www.openfoam.com/documentation/tutorial-guide/compressible.php)
 - [ ] 03. [Multiphase Flow](https://www.openfoam.com/documentation/tutorial-guide/multiphase.php) (Favorite)
@@ -110,7 +96,7 @@ Download [tutorail](https://www.openfoam.com/documentation/tutorial-guide/introd
 - [ ] ...
 
 
-### Incompressible Flow 
+### ☺︎ Incompressible Flow 
 In an incompressible fluid, particles have constant density (`ρ = const`), and so in the particle frame of reference, the Lagrangian observer does not see any density variation and [`Dρ/Dt = 0`](https://en.wikipedia.org/wiki/Incompressible_flow).  
 
 <img src="http://latex.codecogs.com/svg.latex?\frac{\partial\rho}{\partial&space;t}=0&space;" title="http://latex.codecogs.com/svg.latex?\frac{\partial\rho}{\partial t}=0 " /> 
@@ -457,6 +443,16 @@ PISO
 
 
 
+### ☺︎ Post-processing 
+paraview (opensource)
+[download paraview](https://www.paraview.org/download/)
+open with `paraFoam` later
+
+### ☺︎ Terminate OpenFOAM
+to end OpenFOAM, 
+```
+[ofuser@xxxxxxxxxxxx workingDir]$ exit
+```
 
 
 Enjoy :)
