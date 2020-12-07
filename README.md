@@ -458,7 +458,7 @@ open with `paraFoam` later
 [ofuser@xxxxxxxxxxxx cavity]$ parafoam
 ```
 ### ☹︎ Problem : paraFoam doesn't work on Mac...
-As Tutorial described in section 2.1.4 `[Post-processing]`(https://cfd.direct/openfoam/user-guide/v7-cavity/), type `paraFoam`
+As Tutorial described in section 2.1.4 [Post-processing](https://cfd.direct/openfoam/user-guide/v7-cavity/), type `paraFoam`
 
 ```
 [ofuser@xxxxxxxxxxxx cavity]$ paraFoam
@@ -466,8 +466,7 @@ QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-ofuser'
 QXcbConnection: Could not connect to display 
 ```
 But, get error message as seen above..
-Other ppl also suffered from this problem. The solution can be found in the post `[
-[OpenFOAM] QXcbConnection: Could not connect to display :0](https://www.cfd-online.com/Forums/paraview/197451-qxcbconnection-could-not-connect-display-0-a.html#post705610)`
+Other ppl also suffered from this problem. The solution can be found in the post [OpenFOAM: QXcbConnection: Could not connect to display :0](https://www.cfd-online.com/Forums/paraview/197451-qxcbconnection-could-not-connect-display-0-a.html#post705610)
 
 So! The solution is.. 
 ```
@@ -478,15 +477,15 @@ Created 'cavity.OpenFOAM' 'cavity.foam'
 Then, open paraview manually...
 select `OepnFOAMReader`
 
-<FIG>
+<img width="1115" alt="06_paraview_data_with" src="https://user-images.githubusercontent.com/40614421/101380151-764e2180-38b5-11eb-8c03-ebea19116db4.png">
 
 click `Apply`
 
-<Fig>
+<img width="1153" alt="07_paraview_apply" src="https://user-images.githubusercontent.com/40614421/101380169-79e1a880-38b5-11eb-9f23-d2ff0f7714ab.png">
 
 Then, check properties, here `P`, and `U` 
 
-<Fig>
+<img width="1151" alt="08_paraview_properties" src="https://user-images.githubusercontent.com/40614421/101380172-7a7a3f00-38b5-11eb-8736-afe40ce2c4d8.png">
 
 > coming soon :)
 
