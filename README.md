@@ -59,6 +59,12 @@ install OpenFOAM and start working on the container
 (base) ist-xxx-xx: ~ $ ./startMacOpenFOAM
 ```
 
+### ☺︎ Terminate OpenFOAM
+to end OpenFOAM, 
+```
+[ofuser@xxxxxxxxxxxx workingDir]$ exit
+```
+
 ### ☺︎ OpenFOAM tutorial
 [tutorial](https://www.openfoam.com/documentation/tutorial-guide/)
 
@@ -437,22 +443,54 @@ PISO
     pRefValue       0;
 }
 ```
-
-
-> coming soon :)
-
-
+##### run Solver 
+open terminal and run `icoFoam`
+```
+[ofuser@xxxxxxxxxxxx cavity]$ icoFoam
+```
 
 ### ☺︎ Post-processing 
 paraview (opensource)
 [download paraview](https://www.paraview.org/download/)
 open with `paraFoam` later
 
-### ☺︎ Terminate OpenFOAM
-to end OpenFOAM, 
 ```
-[ofuser@xxxxxxxxxxxx workingDir]$ exit
+[ofuser@xxxxxxxxxxxx cavity]$ parafoam
 ```
+### ☹︎ Problem : paraFoam doesn't work on Mac...
+As Tutorial described in section 2.1.4 `[Post-processing]`(https://cfd.direct/openfoam/user-guide/v7-cavity/), type `paraFoam`
+
+```
+[ofuser@xxxxxxxxxxxx cavity]$ paraFoam
+QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-ofuser'
+QXcbConnection: Could not connect to display 
+```
+But, get error message as seen above..
+Other ppl also suffered from this problem. The solution can be found in the post `[
+[OpenFOAM] QXcbConnection: Could not connect to display :0](https://www.cfd-online.com/Forums/paraview/197451-qxcbconnection-could-not-connect-display-0-a.html#post705610)`
+
+So! The solution is.. 
+```
+[ofuser@xxxxxxxxxxxx cavity]$ paraFoam -touch-all
+Created 'cavity.blockMesh'
+Created 'cavity.OpenFOAM' 'cavity.foam'
+```
+Then, open paraview manually...
+select `OepnFOAMReader`
+
+<FIG>
+
+click `Apply`
+
+<Fig>
+
+Then, check properties, here `P`, and `U` 
+
+<Fig>
+
+> coming soon :)
+
+
 
 
 Enjoy :)
