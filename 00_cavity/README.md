@@ -45,7 +45,7 @@ Key features:
 Check `blockMeshDict` which is dictionary located in `...\system`. Find all details about [Mesh generation with the blockMesh utility](https://cfd.direct/openfoam/user-guide/v6-blockmesh/) 
 (add comments by SS)
 
-<//fig>
+<img width="324" alt="Screenshot 2020-12-08 at 21 48 58" src="https://user-images.githubusercontent.com/40614421/101645668-eafc9980-3a36-11eb-964a-48401989a863.png">
 Fig. Block structure of the mesh for the cavity [ref](https://cfd.direct/openfoam/user-guide/v6-cavity/)
 
 > vertex numbering follows the Right-hand rule
