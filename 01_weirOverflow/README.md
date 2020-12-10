@@ -86,11 +86,17 @@ Created 'weirOverflow.OpenFOAM' 'weirOverflow.foam'
 Generate Verticies, Faces, and Blocks
 > vertex numbering follows the Right-hand rule
 
+![11_vertex](https://user-images.githubusercontent.com/40614421/101821342-21661180-3b28-11eb-8cba-b007fcfd1212.png)
 
-<//fig>
-Fig 01. Block structure (geometry) of weirOverflow
+Fig 01. Structure of the weirOverflow and verticies.
 
+![12_blocks](https://user-images.githubusercontent.com/40614421/101821340-21661180-3b28-11eb-8f18-adaba201c6ae.png)
 
+Fig 02. Structure of the weirOverflow and blocks.
+
+![13_bc](https://user-images.githubusercontent.com/40614421/101821336-2034e480-3b28-11eb-867c-376cd86e6b35.png)
+
+Fig 03. Structure of the weirOverflow, faces and boundary conditions.
 
 ```
 [ofuser@xxxxxxxxxxxx weirOverflow]$ cd system
