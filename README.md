@@ -94,7 +94,8 @@ Download [tutorail](https://www.openfoam.com/documentation/tutorial-guide/introd
 
 ### ☺︎ Curriculum
 - [x] 01. [Incompressible Flow](https://www.openfoam.com/documentation/tutorial-guide/incompressible.php)
-- [ ] 02. [Multiphase Flow](https://www.openfoam.com/documentation/tutorial-guide/multiphase.php)
+- [x] 02. [Multiphase Flow](https://www.openfoam.com/documentation/tutorial-guide/multiphase.php)
+   * WeirOverFlow
    * Droplet on the surface (single component multiphase) ... coming soon
 - [ ] 03. [Compressible Flow](https://www.openfoam.com/documentation/tutorial-guide/compressible.php)
 - [ ] 04. [Stress Analysis](https://www.openfoam.com/documentation/tutorial-guide/stressAnalysis.php)

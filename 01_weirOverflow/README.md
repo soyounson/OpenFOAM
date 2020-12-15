@@ -1,4 +1,4 @@
-## :black_heart: Multiphase flow: weir over flow
+## :black_heart: Multiphase flow: weiroverflow
 
 To solve multiphase flow, front tracking (FT) or front capturing (FC) methods are combined with Navier-Stokes equations to find the interface movement and its location at different times. The FT method is a Lagrangian approach which is straight forward to track the moving interface explicitly showing high accuracy ([Tryggvason, Bunner et al. 2001](https://web.itu.edu.tr/~nas/publications/jcppaper.pdf)). However, difficulties in the application of the Lagrangian approach arise when the interface becomes tortuous and breaks up. In these situations, the markers located on the interface, which allow distinguishing between the different phases, come so close to each other that singularities arise. As a result, the location of the interface becomes a not well-defined problem. The FC method is an Eulerian approach and defines the location of interface implicitly. The application of the FC method into numerical methods is quite easy and, as a result, this method is commonly used in solving multiphase flow ([Scardovelli and Zaleski 1999](https://www.annualreviews.org/doi/abs/10.1146/annurev.fluid.31.1.567)). Among the several FC methods, the Volume of Fluid (VOF) ([Hirt and Nichols 1981](https://www.sciencedirect.com/science/article/pii/0021999181901455)) and the level set method ([Sussman, Fatemi et al. 1998](https://www.sciencedirect.com/science/article/abs/pii/S0045793097000534)) are widely adopted in many studies. VOF is based on the application of marker and cell methods ([Harlow and Welch 1965](https://ui.adsabs.harvard.edu/abs/1965PhFl....8.2182H/abstract)), where for each cell a fraction function is defined ranging between 0 to 1. The fraction function is 0 when the cell is totally occupied by gas or 1 when totally occupied by liquid. When the fraction function has a value between 0 and 1, the interface is located within the cell and the liquid density is calculated using the
 fraction function value (Hirt and Nichols 1981). 
@@ -533,8 +533,45 @@ maxDeltaT       1;
 // ************************************************************************* //
 ```
 
-### ☺︎ Post-processing 
+> ... maybe update more
 
-> ... coming soon
+### ☺︎ Post-processing 
+For postprocessing,
+```
+[ofuser@xxxxxxxxxxxx weirOverflow]$ paraFoam -touch-all
+Created 'weirOverflow.blockMesh'
+Created 'weirOverflow.OpenFOAM' 'weirOverflow.foam'
+```
+
+go to the directory, then open the file `weirOverflow.OpenFOAM` manually.
+(On mac, `paraFoam` doesn't work in terminal. The detailed explanation has been described in section: [☹︎ Problem : paraFoam doesn't work on Mac...](https://github.com/soyounson/OpenFOAM#%EF%B8%8E-problem--parafoam-doesnt-work-on-mac))
+
+<fig 01>
+
+Open data with `OpenFOAMReader`.
+
+<fig2>
+
+Then, click `Apply` to activate your output.
+
+<fig3>
+
+By selecting `alpha.water` (phase fraction) in purple square, check how water (fluid) locates in the domain (t = 2)
+
+<fig4>
+
+Now, check water (flow) at different time step. As an initial condition, we set the maximum time step of 60. (you can increase maximum time steps to check stabilization of fluid)
+To save an animation, go to `File` menu, select `Save Animation`. 
+
+<fig5>
+<fig6>
+
+You can manage saving options if you want. 
+
+<fig7>
+
+The resolution is not good but the animation is below.
+
+<movie>
 
 Enjoy :)
