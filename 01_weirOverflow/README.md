@@ -546,32 +546,40 @@ Created 'weirOverflow.OpenFOAM' 'weirOverflow.foam'
 go to the directory, then open the file `weirOverflow.OpenFOAM` manually.
 (On mac, `paraFoam` doesn't work in terminal. The detailed explanation has been described in section: [☹︎ Problem : paraFoam doesn't work on Mac...](https://github.com/soyounson/OpenFOAM#%EF%B8%8E-problem--parafoam-doesnt-work-on-mac))
 
-<fig 01>
+<img width="887" alt="01_outputfile" src="https://user-images.githubusercontent.com/40614421/102250418-d707da80-3f03-11eb-9267-e45e328c945f.png">
 
 Open data with `OpenFOAMReader`.
 
-<fig2>
+<img width="446" alt="02_open_paraview_format" src="https://user-images.githubusercontent.com/40614421/102250432-db33f800-3f03-11eb-9e8e-5d98a0ca62cf.png">
 
 Then, click `Apply` to activate your output.
 
-<fig3>
+<img width="1385" alt="03_open" src="https://user-images.githubusercontent.com/40614421/102250433-db33f800-3f03-11eb-806b-30967cb8c202.png">
 
 By selecting `alpha.water` (phase fraction) in purple square, check how water (fluid) locates in the domain (t = 2)
 
-<fig4>
+<img width="1383" alt="04_change_properties" src="https://user-images.githubusercontent.com/40614421/102250438-dbcc8e80-3f03-11eb-86b3-4d5d18e0cd3b.png">
 
-Now, check water (flow) at different time step. As an initial condition, we set the maximum time step of 60. (you can increase maximum time steps to check stabilization of fluid)
+Now, check water (flow) at different time step. As an initial condition, we set the maximum time step of 60. (you can increase maximum time steps to check stabilization of fluid).
+
+<img width="1382" alt="05_check_time_steps" src="https://user-images.githubusercontent.com/40614421/102250439-dc652500-3f03-11eb-8656-50f80068edd0.png">
+
 To save an animation, go to `File` menu, select `Save Animation`. 
 
-<fig5>
-<fig6>
+<img width="1387" alt="06_save_animation" src="https://user-images.githubusercontent.com/40614421/102250442-dc652500-3f03-11eb-8091-a4b3df9fc200.png">
 
 You can manage saving options if you want. 
 
-<fig7>
+<img width="681" alt="07_save_as_a_file" src="https://user-images.githubusercontent.com/40614421/102250445-dcfdbb80-3f03-11eb-9942-4def5aca2aaf.png">
+
+<img width="573" alt="08_save_options" src="https://user-images.githubusercontent.com/40614421/102250446-dd965200-3f03-11eb-8d18-c4f6dae923b8.png">
 
 The resolution is not good but the animation is below.
 
-<movie>
+
+<div align="center">
+  <a href="https://www.youtube.com/watch?v=86_KW0Xq7Jw"><img src="https://img.youtube.com/vi/86_KW0Xq7Jw/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
+
 
 Enjoy :)
