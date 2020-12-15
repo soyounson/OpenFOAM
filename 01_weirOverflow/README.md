@@ -573,13 +573,12 @@ You can manage saving options if you want.
 <img width="681" alt="07_save_as_a_file" src="https://user-images.githubusercontent.com/40614421/102250445-dcfdbb80-3f03-11eb-9942-4def5aca2aaf.png">
 
 <img width="573" alt="08_save_options" src="https://user-images.githubusercontent.com/40614421/102250446-dd965200-3f03-11eb-8d18-c4f6dae923b8.png">
+⎯
 
-The resolution is not good but the animation is below.
-
+Youtube ▷ link below,
 
 <div align="center">
-  <a href="https://www.youtube.com/watch?v=86_KW0Xq7Jw"><img src="https://img.youtube.com/vi/86_KW0Xq7Jw/0.jpg" alt="IMAGE ALT TEXT"></a>
+  <a href="https://www.youtube.com/watch?v=9mBfow0UPvk"><img src="https://img.youtube.com/vi/9mBfow0UPvk/0.jpg" alt="IMAGE ALT TEXT"></a>
 </div>
-
 
 Enjoy :)
