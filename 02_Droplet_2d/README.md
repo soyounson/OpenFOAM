@@ -1,6 +1,6 @@
 ## :black_heart: Multiphase flow: Droplet (2D)
 
-> Still working....
+:no_entry: :no_entry: :no_entry: Still working.... :no_entry: :no_entry: :no_entry:
 
 
 #### ☺︎ Start OpenFOAM on terminal
@@ -51,15 +51,19 @@ Running interFoam on /home/ofuser/workingDir/OpenFOAM_examples/droplet_2d
 Generate Verticies, Faces, and Blocks
 > vertex numbering follows the Right-hand rule
 
+![01_verticies](https://user-images.githubusercontent.com/40614421/102402694-781a9200-3fe5-11eb-8678-f2a3b44d051b.png)
 
 Fig 01. Schematic of a domain with verticies.
 
-
+![02_block](https://user-images.githubusercontent.com/40614421/102402721-7fda3680-3fe5-11eb-8eda-b45ea614a339.png)
 
 Fig 02. Schematic of a domain with a single block.
 
+![03_bc](https://user-images.githubusercontent.com/40614421/102402720-7fda3680-3fe5-11eb-820b-b3ce73fb2948.png)
 
 Fig 03. Structure of a domain with boundary conditions.
+
+![04_droplet_patch](https://user-images.githubusercontent.com/40614421/102402718-7ea90980-3fe5-11eb-83be-0b5b0208c159.png)
 
 Fig 04. Schematic of a domain and patched droplet at a center (water in blue color)
 
