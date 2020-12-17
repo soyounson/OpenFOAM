@@ -67,6 +67,90 @@ Fig 03. Structure of a domain with boundary conditions.
 
 Fig 04. Schematic of a domain and patched droplet at a center (water in blue color)
 
+### ☺︎ Properties 
+In `constant` folder, you can manage some properties. 
+* g : gravity acceleration [m/s^2]
+
+* transportProperties : fluid properties (Here, water and air)
+
+```
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+phases (water air);
+
+water
+{
+    transportModel  Newtonian;
+    nu              1e-06;   # kinematic viscosity of water
+    rho             1000;    # density of water
+}
+
+air
+{
+    transportModel  Newtonian;
+    nu              1.48e-05;  # kinematic viscosity  of air
+    rho             1;         # density  of air
+}
+
+sigma           0.07;          # surface tension (water-air @ 25'c)
+
+
+// ************************************************************************* //
+```
+* turbulenceProperties : [Reynolds Averaged Simulation (RAS)](https://www.openfoam.com/documentation/guides/latest/doc/guide-turbulence-ras.html) and [K-epsilon model](https://www.openfoam.com/documentation/guides/latest/doc/guide-turbulence-ras-k-epsilon.html) in linear-eddy-viscosity models.
+
+```
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      turbulenceProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+simulationType  RAS;
+
+RAS
+{
+    RASModel        kEpsilon;
+
+    turbulence      on;
+
+    printCoeffs     on;
+}
+
+
+// ************************************************************************* //
+```
+
+### ☺︎ Geometry + Boundary conditions + Initial conditions
+
+> coming soon
+
 
 
 ### ☺︎ Post-processing 
