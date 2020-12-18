@@ -143,7 +143,6 @@ RAS
     printCoeffs     on;
 }
 
-
 // ************************************************************************* //
 ```
 
@@ -163,6 +162,36 @@ Created 'droplet_2d.OpenFOAM' 'droplet_2d.foam'
 
 go to the directory, then open the file `weirOverflow.OpenFOAM` manually.
 (On mac, `paraFoam` doesn't work in terminal. The detailed explanation has been described in section: [☹︎ Problem : paraFoam doesn't work on Mac...](https://github.com/soyounson/OpenFOAM#%EF%B8%8E-problem--parafoam-doesnt-work-on-mac))
+
+
+#### ☹︎ Problem : Unable to set reference cell for field p
+get this message 
+
+```
+--> FOAM FATAL IO ERROR: 
+Unable to set reference cell for field p
+    Please supply either pRefCell or pRefPoint
+```
+Solution : add two lines to your fvSolutions in system folder [ref](https://www.cfd-online.com/Forums/openfoam-pre-processing/183498-unable-set-reference-cell-field-p-please-supply-either-prefcell-prefpoi.html)
+```
+[ofuser@xxxxxxxxxxxx droplet_2d]$ cd system/
+[ofuser@xxxxxxxxxxxx system]$ ls
+blockMeshDict  controlDict  fvSchemes  fvSolution  setFieldsDict
+[ofuser@xxxxxxxxxxxx system]$ vi fvSolution
+```
+In this PIMPLE part, add `pRefCell  0;` and `pRefValue 0;`
+using key `i` to insert and modify `fvSolution` and `etc` to end and `:wq` to write and quit (save).
+
+```
+...
+PIMPLE
+{
+    momentumPredictor no;
+    nCorrectors     3;
+    nNonOrthogonalCorrectors 0;
+}
+```
+<fig>
 
 > coming soon
 
