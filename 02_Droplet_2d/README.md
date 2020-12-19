@@ -151,20 +151,7 @@ RAS
 > coming soon
 
 
-
-### ☺︎ Post-processing 
-For postprocessing
-```
-[ofuser@xxxxxxxxxxxx droplet_2d]$ paraFoam -touch-all
-Created 'droplet_2d.blockMesh'
-Created 'droplet_2d.OpenFOAM' 'droplet_2d.foam'
-```
-
-go to the directory, then open the file `weirOverflow.OpenFOAM` manually.
-(On mac, `paraFoam` doesn't work in terminal. The detailed explanation has been described in section: [☹︎ Problem : paraFoam doesn't work on Mac...](https://github.com/soyounson/OpenFOAM#%EF%B8%8E-problem--parafoam-doesnt-work-on-mac))
-
-
-#### ☹︎ Problem : Unable to set reference cell for field p
+### ☹︎ Problem : Unable to set reference cell for field p
 get this message 
 
 ```
@@ -191,7 +178,21 @@ PIMPLE
     nNonOrthogonalCorrectors 0;
 }
 ```
-<fig>
+<img width="850" alt="fvSolution_problem" src="https://user-images.githubusercontent.com/40614421/102700355-ee6cfd80-424c-11eb-9dc5-b09e35b23a7b.png">
+
+
+### ☺︎ Post-processing 
+For postprocessing
+```
+[ofuser@xxxxxxxxxxxx droplet_2d]$ paraFoam -touch-all
+Created 'droplet_2d.blockMesh'
+Created 'droplet_2d.OpenFOAM' 'droplet_2d.foam'
+```
+
+go to the directory, then open the file `weirOverflow.OpenFOAM` manually.
+(On mac, `paraFoam` doesn't work in terminal. The detailed explanation has been described in section: [☹︎ Problem : paraFoam doesn't work on Mac...](https://github.com/soyounson/OpenFOAM#%EF%B8%8E-problem--parafoam-doesnt-work-on-mac))
+
+
 
 > coming soon
 
