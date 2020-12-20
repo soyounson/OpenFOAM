@@ -148,6 +148,76 @@ RAS
 
 ### ☺︎ Geometry + Boundary conditions + Initial conditions
 
+```
+[ofuser@xxxxxxxxxxxx droplet_2d]$ cd system
+[ofuser@xxxxxxxxxxxx droplet_2d]$ ls
+blockMeshDict  controlDict  fvSchemes  fvSolution  setFieldsDict
+```
+#### Geometry
+
+```
+[ofuser@xxxxxxxxxxxx system]$ more blockMeshDict 
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+scale   1;
+
+vertices
+(
+    (  0   0 -0.5)
+    ( 30   0 -0.5)
+    ( 30  30 -0.5)
+    (  0  30 -0.5)
+    (  0   0  0.5)
+    ( 30   0  0.5)
+    ( 30  30  0.5)
+    (  0  30  0.5)
+
+);
+
+blocks
+(
+    hex (0 1 2 3 4 5 6 7) (30 30 1) simpleGrading (1 1 1)
+);
+
+edges
+(
+);
+
+patches
+(
+    wall lowerWall
+    (
+        (0 1 5 4)
+        (3 2 6 7)
+    )
+    patch atmosphere
+    (
+        (0 4 7 3)
+        (2 6 5 1)
+    )
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //
+```
+
 > coming soon
 
 
