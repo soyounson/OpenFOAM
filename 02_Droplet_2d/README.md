@@ -177,27 +177,27 @@ scale   1;
 
 vertices
 (
-    (  0   0 -0.5)
-    ( 30   0 -0.5)
-    ( 30  30 -0.5)
-    (  0  30 -0.5)
-    (  0   0  0.5)
-    ( 30   0  0.5)
-    ( 30  30  0.5)
-    (  0  30  0.5)
+    (  0   0 -0.5)    # vertex 0
+    ( 30   0 -0.5)    # vertex 1
+    ( 30  30 -0.5)    # vertex 2
+    (  0  30 -0.5)    # vertex 3
+    (  0   0  0.5)    # vertex 4
+    ( 30   0  0.5)    # vertex 5
+    ( 30  30  0.5)    # vertex 6
+    (  0  30  0.5)    # vertex 7
 
 );
 
 blocks
 (
-    hex (0 1 2 3 4 5 6 7) (30 30 1) simpleGrading (1 1 1)
+    hex (0 1 2 3 4 5 6 7) (30 30 1) simpleGrading (1 1 1)   # Block 0
 );
 
 edges
 (
 );
 
-patches
+patches     # BC
 (
     wall lowerWall
     (
@@ -217,6 +217,128 @@ mergePatchPairs
 
 // ************************************************************************* //
 ```
+#### IC+solver
+
+```
+[ofuser@xxxxxxxxxxxx system]$ more controlDict 
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     interFoam;
+
+startFrom       latestTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         2;
+
+deltaT          0.001;   # time step
+
+writeControl    adjustable;
+
+writeInterval   0.1;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression off;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  on;
+
+maxCo           0.2;
+
+maxAlphaCo      0.2;
+
+maxDeltaT       1;
+
+// ************************************************************************* //
+```
+
+```
+[ofuser@xxxxxxxxxxxx system]$ more fvSchemes 
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2006                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSchemes;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+ddtSchemes
+{
+    default         Euler;
+}
+
+gradSchemes
+{
+    default         Gauss linear;
+}
+
+divSchemes
+{
+    div(rhoPhi,U)    Gauss linear;
+    div(phi,alpha)   Gauss vanLeer;
+    div(phirb,alpha) Gauss linear;
+    div(phi,k)       Gauss upwind;
+    div(phi,epsilon) Gauss upwind;
+    div(phi,R)       Gauss upwind;
+    div(R)           Gauss linear;
+    div(phi,nuTilda) Gauss upwind;
+    div(((rho*nuEff)*dev2(T(grad(U))))) Gauss linear;
+}
+
+laplacianSchemes
+{
+    default         Gauss linear corrected;
+}
+
+interpolationSchemes
+{
+    default         linear;
+}
+
+snGradSchemes
+{
+    default         corrected;
+}
+
+// ************************************************************************* //
+```
+
 
 > coming soon
 
